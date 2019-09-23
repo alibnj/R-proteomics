@@ -1,4 +1,4 @@
-pg <- read.delim('C:/Users/banijamali.s/Dropbox/Genetics/Data/UniProt/uniprot_Gene-Prot.txt', header=TRUE, sep = "\t")
+pg <- read.delim('./Dropbox/Genetics/Data/UniProt/uniprot_Gene-Prot.txt', header=TRUE, sep = "\t")
 pg <- data.frame(lapply(pg, as.character), stringsAsFactors=FALSE) #strsplit works only with characters
 
 #Assuming the first element is always the 'key' and the rest are aliases, split the gene names,
@@ -18,9 +18,9 @@ pgfrq <- data.frame (table(pgsplt$Gen.name))
 #Adding the count of proteins of each gene in a column at the end of UTR Gene list:
 C$prot.count <- pgfrq$Freq[match(C$NULL.Gene, pgfrq$Var1)]
 
-write.csv(C, 'C:/Users/banijamali.s/Dropbox/Genetics/R/New Results/5UTR-Peak-Comp-w prot.count.csv')
+write.csv(C, './Dropbox/Genetics/R/New Results/5UTR-Peak-Comp-w prot.count.csv')
 
-write.csv(pgfrq, 'C:/Users/banijamali.s/Dropbox/Genetics/R/New Results/p-g-freq.csv')
+write.csv(pgfrq, './Dropbox/Genetics/R/New Results/p-g-freq.csv')
 
 Z <- data.frame(V1 = c("A", "B", "C", "D", "E"), V2 = c('1', '3', '5', '2', '4'))
 Zt <- data.frame(V1 = c("A", "A", "B", "D", "E"))
