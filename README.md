@@ -1,4 +1,4 @@
 R Codes
 =======
 
-My codes in R
+BioInformatics and Proteomics codes in R
